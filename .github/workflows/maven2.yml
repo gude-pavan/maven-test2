@@ -27,11 +27,11 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    - name: Build with Maven
+    #- name: Build with Maven
       # run: mvn -B package --file pom.xml
-      run: mvn --batch-mode -DskipTests package
-    - name: Test
-      run: mvn --batch-mode -Dmaven.test.failure.ignore=true test
+     # run: mvn --batch-mode -DskipTests package
+    - name: run and verify
+      run: mvn --batch-mode --update-snapshots verify
       
     - name: Publish Test Results
       uses: EnricoMi/publish-unit-test-result-action@v2
