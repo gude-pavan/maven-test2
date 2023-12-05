@@ -122,7 +122,7 @@
                             <outputDirectory>${project.build.directory}/cucumber-report-html</outputDirectory>
                             <inputDirectory>${project.build.directory}</inputDirectory>
                             <jsonFiles>
-								<param>**/*Jsonreport.json</param>
+								<param>**/cucumber*.json</param>
 							</jsonFiles>
 							
 							<buildNumber>10.2.1</buildNumber>
