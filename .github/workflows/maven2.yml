@@ -32,7 +32,9 @@ jobs:
      # run: mvn --batch-mode -DskipTests package
      
     - name: run and verify
-      run: mvn -Dtest=testing.xml test
+      run: 
+        cd src/test/java/MyRunner
+        mvn test
       
     - name: Publish Test Results
       uses: EnricoMi/publish-unit-test-result-action@v2
