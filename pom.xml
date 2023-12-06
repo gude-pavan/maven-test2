@@ -9,7 +9,7 @@
         <configuration-suiteXmlFile>testng.xml</configuration-suiteXmlFile>
    <maven.compiler.source>1.8</maven.compiler.source>
    <maven.compiler.target>1.8</maven.compiler.target>
-	<myTestSourceDirectory>${project.basedir}/src/test/java/MyRunner</myTestSourceDirectory>
+	<myTestSourceDirectory>src/test/java/MyRunner</myTestSourceDirectory>
  </properties>
   
   
