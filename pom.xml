@@ -103,7 +103,9 @@
                 
                 <configuration>
                  <!-- <testFailureIgnore>true</testFailureIgnore> -->
+		<suiteXmlFiles>
                     <suiteXmlFile>${configuration-suiteXmlFile}</suiteXmlFile>
+		</suiteXmlFiles>
                 </configuration>
             </plugin>
             
