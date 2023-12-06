@@ -3,7 +3,9 @@
   <groupId>NTTdatalogin-cucumber</groupId>
   <artifactId>NTTdatalogin-cucumber</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  
+<properties>
+	<suiteXmlFiles>testng.xml</suiteXmlFiles>
+</properties>
   <dependencies>
 	  <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
 <dependency>
@@ -100,10 +102,10 @@
 				    <artifactId>maven-surefire-plugin</artifactId>
 				    <version>3.2.2</version>
                 
-                <configuration>
-                    <testFailureIgnore>true</testFailureIgnore>
-                    <SuiteXmlFile>testng.xml</SuiteXmlFile>
-                </configuration>
+		                <configuration>
+		                    <testFailureIgnore>true</testFailureIgnore>
+		                    <suiteXmlFiles>${suiteXmlFiles}</suiteXmlFiles>
+		                </configuration>
             </plugin>
             
             <plugin>
