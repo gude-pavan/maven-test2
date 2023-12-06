@@ -3,9 +3,15 @@
   <groupId>NTTdatalogin-cucumber</groupId>
   <artifactId>NTTdatalogin-cucumber</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-<properties>
-	<suiteXmlFiles>testng.xml</suiteXmlFiles>
-</properties>
+  
+  
+  <properties>
+        <configuration-suiteXmlFile>testng.xml</configuration-suiteXmlFile>
+   <maven.compiler.source>1.8</maven.compiler.source>
+   <maven.compiler.target>1.8</maven.compiler.target>
+ </properties>
+  
+  
   <dependencies>
 	  <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
 <dependency>
@@ -89,31 +95,34 @@
 
     <build>
         <plugins>
-		<plugin>
+            <plugin>
+				    <groupId>org.apache.maven.plugins</groupId>
+				    <artifactId>maven-surefire-plugin</artifactId>
+				    <version>3.2.2</version>
+                
+                <configuration>
+                 <!-- <testFailureIgnore>true</testFailureIgnore> -->
+                    <suiteXmlFile>${configuration-suiteXmlFile}</suiteXmlFile>
+                </configuration>
+            </plugin>
+            
+          
+		   <plugin>
 		        <artifactId>maven-compiler-plugin</artifactId>
 		        <version>3.5.1</version>
 		        <configuration>
 		            <source>1.8</source>
 		            <target>1.8</target>
 		        </configuration>
-   		 </plugin>
-            <plugin>
-				    <groupId>org.apache.maven.plugins</groupId>
-				    <artifactId>maven-surefire-plugin</artifactId>
-				    <version>3.2.2</version>
-                
-		                <configuration>
-		                    <testFailureIgnore>true</testFailureIgnore>
-		                    <suiteXmlFiles>${suiteXmlFiles}</suiteXmlFiles>
-		                </configuration>
-            </plugin>
+		    </plugin>
+		  
             
             <plugin>
                 <groupId>net.masterthought</groupId>
                 <artifactId>maven-cucumber-reporting</artifactId>
                 <version>5.0.0</version>
-                <executions>
-<!--<execution>
+<!--                 <executions>
+                    <execution>
                         <id>execution</id>
                         <phase>verify</phase>
                         <goals>
@@ -124,17 +133,14 @@
                             <outputDirectory>${project.build.directory}/cucumber-report-html</outputDirectory>
                             <inputDirectory>${project.build.directory}</inputDirectory>
                             <jsonFiles>
-								<param>**/cucumber*.json</param>
-							</jsonFiles>
+					<param>**/*Jsonreport.json</param>
+				</jsonFiles>
 							
-							<buildNumber>10.2.1</buildNumber>
-              
-       
+				<buildNumber>10.2.1</buildNumber>
                         </configuration>
-    </execution> --> 
-                </executions>
+                    </execution> 
+                </executions> -->
             </plugin>
-		
         </plugins>
     </build>  
   
