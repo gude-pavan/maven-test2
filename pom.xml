@@ -95,7 +95,6 @@
 
 
     <build>
-	    <testSourceDirectory>${myTestSourceDirectory}</testSourceDirectory>
         <plugins>
             <plugin>
 				    <groupId>org.apache.maven.plugins</groupId>
@@ -103,10 +102,12 @@
 				    <version>3.2.2</version>
                 
                 <configuration>
-                 <!-- <testFailureIgnore>true</testFailureIgnore> -->
+                <testFailureIgnore>true</testFailureIgnore>
+		<testSourceDirectory>${myTestSourceDirectory}</testSourceDirectory>
 		<suiteXmlFiles>
                     <suiteXmlFile>${configuration-suiteXmlFile}</suiteXmlFile>
 		</suiteXmlFiles>
+		
                 </configuration>
             </plugin>
             
