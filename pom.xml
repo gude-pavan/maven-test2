@@ -95,6 +95,7 @@
 
 
     <build>
+	    <testSourceDirectory>${myTestSourceDirectory}</testSourceDirectory>
         <plugins>
             <plugin>
 				    <groupId>org.apache.maven.plugins</groupId>
