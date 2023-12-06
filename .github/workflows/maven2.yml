@@ -32,7 +32,7 @@ jobs:
      # run: mvn --batch-mode -DskipTests package
      
     - name: run and verify
-      run: mvn -Dtest=HYR_TestRunner test
+      run: mvn test
       
     - name: Publish Test Results
       uses: EnricoMi/publish-unit-test-result-action@v2
